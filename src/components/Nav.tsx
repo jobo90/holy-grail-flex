@@ -4,6 +4,10 @@ import { NavContainer } from './styles';
 
 export interface NavProps {}
 
+function handleClick(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  console.log('Clicked!')
+}
+
 const Nav: React.FC<NavProps> = () => {
   return (
     <NavContainer>
@@ -24,7 +28,7 @@ const Nav: React.FC<NavProps> = () => {
           <a href="/#">Contact</a>
         </li>
         <li className="toggle">
-          <a href="/#">Open</a>
+          <button onClick={handleClick}>Open</button>
         </li>
       </ul>
     </NavContainer>
