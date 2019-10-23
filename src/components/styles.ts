@@ -25,61 +25,99 @@ export const GlobalStyle = createGlobalStyle`
   .holyGrailContainer {
     display: flex;
     flex: 1;
-    /* min-width: 100vw; */
+    margin-top: 70px;
   }
 `;
 
 export const NavContainer = styled.nav`
-  background: #eca400;
+  background: #102a43;
   display: flex;
-  /* justify-content: space-between;
-  align-items: center; */
-
-  a {
-    color: #333;
-    font-size: 1.3em;
-    display: block;
-    padding: 20px;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125cd3;
-  }
-
+  clear: both;
+  position: fixed;
+  /* height: 70px; */
+  
   .menu {
     align-items: center;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     list-style: none;
     width: 100vw;
   }
 
-  .toggle {
-    order: 1;
+  a {
+    color: #f0f4f8;
+    font-size: 1.3em;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
   }
 
-  .item {
-    width: 100%;
-    text-align: center;
-    order: 2;
-    /* display: none; */
+  a:hover {
+    color: #9fb3c8;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
+  /* Mobile menu */
+  @media all and (max-width: 750px) {
+    .menu {
+      flex-wrap: wrap;
+    }
+
+    .toggle {
+      display: block;
+      order: 1;
+      margin-right: 20px;
+    }
+
+    .toggle button {
+      background: none;
+      border: none;
+      fill: #f0f4f8;
+    }
+
+    .toggle button:focus {
+      outline: none;
+    }
+
+    .toggle button:hover {
+      cursor: pointer;
+    }
+
+    .item {
+      width: 100%;
+      text-align: center;
+      order: 2;
+      display: none;
+    }
+
+    .item.active {
+      display: block;
+    }
   }
 `;
 
 export const MainContainer = styled.main`
-  background: #00a8e8;
+  background: #f0f4f8;
   flex: 1;
-  /* padding: 20px; */
+  padding: 20px;
 `;
 
 export const SidebarLeftContainer = styled.div`
-  background: #db535e;
+  background: #334e68;
+  color: #f0f4f8;
   flex: 0 0 12em;
+  padding: 20px;
 `;
 
 export const SidebarRightContainer = styled.div`
-  background: #22aaa1;
+  background: #334e68;
+  color: #f0f4f8;
   flex: 0 0 12em;
+  padding: 20px;
 `;

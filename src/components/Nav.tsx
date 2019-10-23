@@ -1,14 +1,20 @@
 import React from 'react';
 
+import MenuIcon from '../icons/MenuIcon'
+import CloseIcon from '../icons/CloseIcon'
+
 import { NavContainer } from './styles';
 
-export interface NavProps {}
-
-function handleClick(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-  console.log('Clicked!')
+export interface NavProps {
+  handleMenuToggleOpen(): void;
+  menuOpen: boolean;
 }
 
-const Nav: React.FC<NavProps> = () => {
+const Nav: React.FC<NavProps> = props => {
+  const handleClick = () => {
+    props.handleMenuToggleOpen();
+  };
+
   return (
     <NavContainer>
       <ul className="menu">
@@ -28,7 +34,9 @@ const Nav: React.FC<NavProps> = () => {
           <a href="/#">Contact</a>
         </li>
         <li className="toggle">
-          <button onClick={handleClick}>Open</button>
+          <button type="button" onClick={handleClick}>
+            {props.menuOpen ? <CloseIcon /> : <MenuIcon />}
+          </button>
         </li>
       </ul>
     </NavContainer>
