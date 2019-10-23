@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     color: #222;
     display: flex;
+    flex-direction: column;
     font-family: 'Titillium Web', sans-serif;
     min-height: 100vh;
   }
@@ -24,19 +25,20 @@ export const GlobalStyle = createGlobalStyle`
   .holyGrailContainer {
     display: flex;
     flex: 1;
-    min-width: 100vw;
+    /* min-width: 100vw; */
   }
 `;
 
-export const HeaderContainer = styled.header`
+export const NavContainer = styled.nav`
   background: #eca400;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* justify-content: space-between;
+  align-items: center; */
 
   a {
     color: #333;
     font-size: 1.3em;
+    display: block;
     padding: 20px;
     text-decoration: none;
   }
@@ -45,23 +47,34 @@ export const HeaderContainer = styled.header`
     color: #125cd3;
   }
 
-  > .menuItemsContainer {
+  .menu {
+    align-items: center;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     list-style: none;
+    width: 100vw;
   }
 
-  @media all and (max-width: 500px) {
-    flex-direction: column;
+  .toggle {
+    order: 1;
+  }
+
+  .item {
+    width: 100%;
+    text-align: center;
+    order: 2;
+    /* display: none; */
   }
 `;
 
 export const MainContainer = styled.main`
   background: #00a8e8;
   flex: 1;
-  padding: 20px;
+  /* padding: 20px; */
 `;
 
-export const SidebarLeftContainer = styled.nav`
+export const SidebarLeftContainer = styled.div`
   background: #db535e;
   flex: 0 0 12em;
 `;
