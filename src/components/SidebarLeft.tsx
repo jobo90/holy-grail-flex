@@ -16,7 +16,7 @@ const SidebarLeft: React.FC<SidebarLeftProps> = props => {
   };
 
   return (
-    <SidebarLeftContainer>
+    <SidebarLeftContainer className={props.sidebarOpen ? 'is-open' : ''} >
       <button type="button" onClick={handleClick}>
         {props.sidebarOpen ? <CloseIcon /> : <MenuIcon />}
       </button>

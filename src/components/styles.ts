@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
 
+// import {SidebarLeftProps} from './SidebarLeft';
+
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700&display=swap');
 
@@ -43,17 +45,14 @@ export const GlobalStyle = createGlobalStyle`
 export const NavContainer = styled.nav`
   background: #102a43;
   display: flex;
-  clear: both;
   position: fixed;
-  /* position: sticky; */
-  /* top: 0; */
-  /* height: 70px; */
+  width: 100%;
 
   .menu {
+    width: 100%;
     align-items: center;
     display: flex;
     list-style: none;
-    width: 100vw;
   }
 
   a {
@@ -77,7 +76,7 @@ export const NavContainer = styled.nav`
   }
 
   /* Mobile menu */
-  @media all and (max-width: 750px) {
+  @media all and (max-width: 600px) {
     .menu {
       flex-wrap: wrap;
       max-width: 100%;
@@ -138,9 +137,13 @@ export const SidebarLeftContainer = styled.div`
   flex: 0 0 1em;
   padding: 20px;
 
+  &.is-open {
+    min-width: 240px;
+  }
+
   .open {
     margin-top: 20px;
-    width: 200px;
+    width: 240px;
   }
 
   @media all and (max-width: 800px) {
