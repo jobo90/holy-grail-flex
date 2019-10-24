@@ -125,6 +125,7 @@ export const SidebarLeftContainer = styled.div`
   button {
     background: none;
     border: none;
+    cursor: pointer;
     fill: #f0f4f8;
   }
 
