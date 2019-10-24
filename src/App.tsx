@@ -8,11 +8,13 @@ interface AppProps {}
 
 interface AppState {
   menuOpen: boolean;
+  sidebarOpen: boolean;
 }
 
 class App extends React.Component<AppProps, AppState> {
   state = {
-    menuOpen: false
+    menuOpen: false,
+    sidebarOpen: false,
   };
 
   handleMenuToggleOpen = () => {
@@ -29,7 +31,21 @@ class App extends React.Component<AppProps, AppState> {
     }
 
     this.setState({
-      menuOpen: !this.state.menuOpen
+      menuOpen: !this.state.menuOpen,
+    });
+  };
+
+  handleSidebarToggleOpen = () => {
+    const container = document.querySelector('.sidebarContentContainer');
+
+    if (this.state.sidebarOpen && container) {
+      container.classList.remove('open');
+    } else if (container) {
+      container.classList.add('open');
+    }
+
+    this.setState({
+      sidebarOpen: !this.state.sidebarOpen,
     });
   };
 
@@ -38,7 +54,10 @@ class App extends React.Component<AppProps, AppState> {
       <React.Fragment>
         <Nav handleMenuToggleOpen={this.handleMenuToggleOpen} menuOpen={this.state.menuOpen} />
         <div className="holyGrailContainer">
-          <SidebarLeft />
+          <SidebarLeft
+            handleSidebarToggleOpen={this.handleSidebarToggleOpen}
+            sidebarOpen={this.state.sidebarOpen}
+          />
           <MainContent />
           <SidebarRight />
         </div>

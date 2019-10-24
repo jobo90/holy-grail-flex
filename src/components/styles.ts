@@ -19,13 +19,24 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    margin: 20px 0;
+    margin: 25px 0;
   }
 
   .holyGrailContainer {
     display: flex;
     flex: 1;
-    margin-top: 70px;
+    line-height: 1.8;
+    margin-top: 63px;
+  }
+
+  @media all and (max-width: 800px) {
+    .holyGrailContainer {
+      flex-flow: row wrap;
+    }
+    
+    .holyGrailContainer > * {
+      flex: 1 auto;
+    }
   }
 `;
 
@@ -34,8 +45,10 @@ export const NavContainer = styled.nav`
   display: flex;
   clear: both;
   position: fixed;
+  /* position: sticky; */
+  /* top: 0; */
   /* height: 70px; */
-  
+
   .menu {
     align-items: center;
     display: flex;
@@ -67,6 +80,7 @@ export const NavContainer = styled.nav`
   @media all and (max-width: 750px) {
     .menu {
       flex-wrap: wrap;
+      max-width: 100%;
     }
 
     .toggle {
@@ -104,15 +118,34 @@ export const NavContainer = styled.nav`
 
 export const MainContainer = styled.main`
   background: #f0f4f8;
-  flex: 1;
+  /* flex: 1; */
   padding: 20px;
 `;
 
 export const SidebarLeftContainer = styled.div`
+  button {
+    background: none;
+    border: none;
+    fill: #f0f4f8;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
   background: #334e68;
   color: #f0f4f8;
-  flex: 0 0 12em;
+  flex: 0 0 1em;
   padding: 20px;
+
+  .open {
+    margin-top: 20px;
+    width: 200px;
+  }
+
+  @media all and (max-width: 800px) {
+    flex: 1;
+  }
 `;
 
 export const SidebarRightContainer = styled.div`
@@ -120,4 +153,8 @@ export const SidebarRightContainer = styled.div`
   color: #f0f4f8;
   flex: 0 0 12em;
   padding: 20px;
+
+  @media all and (max-width: 800px) {
+    flex: 1;
+  }
 `;
