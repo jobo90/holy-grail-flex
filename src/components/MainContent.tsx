@@ -5,7 +5,7 @@ import { MainContainer } from './styles';
 export interface MainContentProps {}
 
 const MainContent: React.FC<MainContentProps> = () => {
-  return <MainContainer>
+  return (<MainContainer>
     <h2>Main Content</h2>
     <p>Legal Ipsum. By clicking on the date such litigation is filed. All Recipient's rights granted hereunder will terminate automatically if You fail to comply with terms herein and fail to cure such breach within 30 days of becoming aware of the Copyright Holder, if the Electronic Distribution Mechanism is maintained by the parties with respect to this License, since you have found elsewhere or that Derived Work under any other intellectual property claims: (a) under intellectual property rights (other than patent) owned or controlled by Licensor, to make, use, sell, offer for sale, have made, and/or otherwise dispose of: 1) Modifications made by offering access to copy the source code, to be a Contribution. Once a Contribution is added by the Free Software Foundation; we sometimes make exceptions for this.</p>
 
@@ -16,7 +16,7 @@ const MainContent: React.FC<MainContentProps> = () => {
     <p>General; Definitions. This License and fail to comply with any term(s) of this document is to make arrangements wholly outside of this License would be likely to look for such a Package may consist of either of that work without being authorised to do so in a Glossary at the expiration of said Licensed Product. You must make it enforceable. This License applies to any derivative works. Therefore, for any text you hold the copyright holders, and the Program in a conspicuous location in the case of a program implementing the `TeX language'.</p>
 
     <p>CONDITIONS ON DISTRIBUTION AND MODIFICATION Activities other than `show w' and `show c'; they could even be mouse-clicks or menu items--whatever suits your program. You should have at least twelve (12) months after the cause of action arose. Each party waives its rights to trademarks, copyrights, patents, trade secrets or any Contributor. You agree not to use *distribution* conditions that differ significantly from those contained in the preceding Article, the following notices to the Covered Code, it is distributed in accordance with the terms of the License or those from the Public Domain or from the Program, the distribution and/or modification of that work are not to offer or impose any terms on such Contributor's behalf.</p>
-  </MainContainer>;
+  </MainContainer>)
 };
 
 export default MainContent;

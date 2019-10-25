@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
 
-// import {SidebarLeftProps} from './SidebarLeft';
-
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700&display=swap');
 
@@ -17,34 +15,23 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     font-family: 'Titillium Web', sans-serif;
-    min-height: 100vh;
   }
 
-  p {
-    margin: 25px 0;
-  }
-
-  .holyGrailContainer {
+  .holy-grail-container {
     display: flex;
-    flex: 1;
     line-height: 1.8;
     margin-top: 63px;
   }
 
   @media all and (max-width: 800px) {
-    .holyGrailContainer {
+    .holy-grail-container {
       flex-flow: row wrap;
-    }
-    
-    .holyGrailContainer > * {
-      flex: 1 auto;
     }
   }
 `;
 
 export const NavContainer = styled.nav`
   background: #102a43;
-  display: flex;
   position: fixed;
   width: 100%;
 
@@ -79,12 +66,10 @@ export const NavContainer = styled.nav`
   @media all and (max-width: 600px) {
     .menu {
       flex-wrap: wrap;
-      max-width: 100%;
     }
 
     .toggle {
       display: block;
-      order: 1;
       margin-right: 20px;
     }
 
@@ -105,7 +90,7 @@ export const NavContainer = styled.nav`
     .item {
       width: 100%;
       text-align: center;
-      order: 2;
+      order: 1;
       display: none;
     }
 
@@ -117,11 +102,21 @@ export const NavContainer = styled.nav`
 
 export const MainContainer = styled.main`
   background: #f0f4f8;
-  /* flex: 1; */
   padding: 20px;
+
+  p {
+    margin: 25px 0;
+  }
 `;
 
 export const SidebarLeftContainer = styled.div`
+  align-items: flex-start;
+  background: #334e68;
+  color: #f0f4f8;
+  display: flex;
+  flex: 0 0 1em;
+  padding: 20px;
+
   button {
     background: none;
     border: none;
@@ -133,17 +128,12 @@ export const SidebarLeftContainer = styled.div`
     outline: none;
   }
 
-  background: #334e68;
-  color: #f0f4f8;
-  flex: 0 0 1em;
-  padding: 20px;
-
   &.is-open {
     min-width: 240px;
   }
 
   .open {
-    margin-top: 20px;
+    margin-top: 50px;
     width: 240px;
   }
 

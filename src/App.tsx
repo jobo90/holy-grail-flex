@@ -36,7 +36,7 @@ class App extends React.Component<AppProps, AppState> {
   };
 
   handleSidebarToggleOpen = () => {
-    const container = document.querySelector('.sidebarContentContainer');
+    const container = document.querySelector('.sidebar-content-container');
 
     if (this.state.sidebarOpen && container) {
       container.classList.remove('open');
@@ -53,7 +53,7 @@ class App extends React.Component<AppProps, AppState> {
     return (
       <React.Fragment>
         <Nav handleMenuToggleOpen={this.handleMenuToggleOpen} menuOpen={this.state.menuOpen} />
-        <div className="holyGrailContainer">
+        <div className="holy-grail-container">
           <SidebarLeft
             handleSidebarToggleOpen={this.handleSidebarToggleOpen}
             sidebarOpen={this.state.sidebarOpen}

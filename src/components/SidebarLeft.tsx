@@ -20,7 +20,7 @@ const SidebarLeft: React.FC<SidebarLeftProps> = props => {
       <button type="button" onClick={handleClick}>
         {props.sidebarOpen ? <CloseIcon /> : <MenuIcon />}
       </button>
-      <div className="sidebarContentContainer">
+      <div className="sidebar-content-container">
         {props.sidebarOpen && (
           <React.Fragment>
             <h3>Sidebar</h3>
