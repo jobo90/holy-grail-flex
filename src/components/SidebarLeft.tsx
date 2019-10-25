@@ -10,6 +10,9 @@ export interface SidebarLeftProps {
   sidebarOpen: boolean;
 }
 
+/**
+ * This component displays the left sidebar
+ */
 const SidebarLeft: React.FC<SidebarLeftProps> = props => {
   const handleClick = () => {
     props.handleSidebarToggleOpen();

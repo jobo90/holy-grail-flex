@@ -10,6 +10,9 @@ export interface NavProps {
   menuOpen: boolean;
 }
 
+/**
+ * This component displays the navbar with the menu items
+ */
 const Nav: React.FC<NavProps> = props => {
   const handleClick = () => {
     props.handleMenuToggleOpen();

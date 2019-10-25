@@ -4,6 +4,9 @@ import { MainContainer } from './styles';
 
 export interface MainContentProps {}
 
+/**
+ * This component displays the main content of the site
+ */
 const MainContent: React.FC<MainContentProps> = () => {
   return (<MainContainer>
     <h2>Main Content</h2>

@@ -11,13 +11,16 @@ interface AppState {
   sidebarOpen: boolean;
 }
 
+/**
+ * This component contains the state + methods for the menu and sidebar to open / close as well as the main content and the right sidebar
+ */
 class App extends React.Component<AppProps, AppState> {
   state = {
     menuOpen: false,
     sidebarOpen: false,
   };
 
-  handleMenuToggleOpen = () => {
+  private handleMenuToggleOpen = () => {
     const buttons = document.querySelectorAll('.item');
 
     if (this.state.menuOpen) {
@@ -35,7 +38,7 @@ class App extends React.Component<AppProps, AppState> {
     });
   };
 
-  handleSidebarToggleOpen = () => {
+  private handleSidebarToggleOpen = () => {
     const container = document.querySelector('.sidebar-content-container');
 
     if (this.state.sidebarOpen && container) {
