@@ -4,38 +4,46 @@ import styled from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700&display=swap');
 
-  * {
+  *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
   
   body {
     color: #222;
-    display: flex;
-    flex-direction: column;
     font-family: 'Titillium Web', sans-serif;
+    overflow-y: hidden;
   }
 
   .holy-grail-container {
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 100vh;
     line-height: 1.8;
-    margin-top: 63px;
   }
 
   @media all and (max-width: 800px) {
     .holy-grail-container {
       flex-flow: row wrap;
+      overflow-y: auto;
     }
   }
 `;
 
 export const NavContainer = styled.nav`
   background: #102a43;
-  position: fixed;
-  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
 
   .menu {
+    flex: 1 0 auto;
     width: 100%;
     align-items: center;
     display: flex;
@@ -48,13 +56,15 @@ export const NavContainer = styled.nav`
     padding: 20px;
     text-decoration: none;
     display: block;
+    user-select: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #9fb3c8;
+    }
   }
 
-  a:hover {
-    color: #9fb3c8;
-  }
-
-  .toggle {
+  .toggle-container {
     display: none;
   }
 
@@ -68,23 +78,23 @@ export const NavContainer = styled.nav`
       flex-wrap: wrap;
     }
 
-    .toggle {
+    .toggle-container {
       display: block;
       margin-right: 20px;
     }
 
-    .toggle button {
+    .toggle {
       background: none;
       border: none;
       fill: #f0f4f8;
-    }
 
-    .toggle button:focus {
-      outline: none;
-    }
+      &:focus {
+        outline: none;
+      }
 
-    .toggle button:hover {
-      cursor: pointer;
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     .item {
@@ -103,6 +113,7 @@ export const NavContainer = styled.nav`
 export const MainContainer = styled.main`
   background: #f0f4f8;
   padding: 20px;
+  overflow-y: auto;
 
   p {
     margin: 25px 0;
@@ -112,10 +123,14 @@ export const MainContainer = styled.main`
 export const SidebarLeftContainer = styled.div`
   align-items: flex-start;
   background: #334e68;
+  /* bottom: 0; */
   color: #f0f4f8;
   display: flex;
-  flex: 0 0 1em;
   padding: 20px;
+  flex: 0 0 50px;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  overflow-y: auto;
 
   button {
     background: none;
@@ -129,16 +144,25 @@ export const SidebarLeftContainer = styled.div`
   }
 
   &.is-open {
-    min-width: 240px;
+    /* max-width: 200px; */
+    flex: 0 0 200px;
+    overflow-y: auto;
   }
 
   .open {
-    margin-top: 50px;
-    width: 240px;
+    margin-top: 20px;
+    min-width: 240px;
   }
 
   @media all and (max-width: 800px) {
     flex: 1;
+    overflow: hidden;
+
+    &.is-open {
+      min-width: 200px;
+      flex: 1;
+      overflow-y: auto;
+    }
   }
 `;
 

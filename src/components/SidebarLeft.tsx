@@ -30,6 +30,23 @@ const SidebarLeft: React.FC<SidebarLeftProps> = props => {
             <p>Menu item 1</p>
             <p>Menu item 2</p>
             <p>Menu item 3</p>
+            <p>Menu item 4</p>
+            <p>Menu item 5</p>
+            <p>Menu item 6</p>
+            <p>Menu item 7</p>
+            <p>Menu item 8</p>
+            <p>Menu item 9</p>
+            <p>Menu item 10</p>
+            <p>Menu item 11</p>
+            <p>Menu item 12</p>
+            <p>Menu item 13</p>
+            <p>Menu item 14</p>
+            <p>Menu item 15</p>
+            <p>Menu item 16</p>
+            <p>Menu item 17</p>
+            <p>Menu item 18</p>
+            <p>Menu item 19</p>
+            <p>Menu item 20</p>
           </React.Fragment>
         )}
       </div>

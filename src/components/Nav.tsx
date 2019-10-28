@@ -36,8 +36,8 @@ const Nav: React.FC<NavProps> = props => {
         <li className="item">
           <a href="/#">Contact</a>
         </li>
-        <li className="toggle">
-          <button type="button" onClick={handleClick}>
+        <li className="toggle-container">
+          <button className="toggle" type="button" onClick={handleClick}>
             {props.menuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
         </li>

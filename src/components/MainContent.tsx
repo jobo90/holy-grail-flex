@@ -2,7 +2,8 @@ import React from 'react';
 
 import { MainContainer } from './styles';
 
-export interface MainContentProps {}
+export interface MainContentProps {  
+}
 
 /**
  * This component displays the main content of the site
