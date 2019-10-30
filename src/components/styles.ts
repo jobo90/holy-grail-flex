@@ -21,6 +21,11 @@ export const GlobalStyle = createGlobalStyle`
     overflow-y: hidden;
   }
 
+  .selected {
+    background: #6294c4;
+    color: #fff;
+  }
+
   .holy-grail-container {
     display: flex;
     flex-flow: row nowrap;

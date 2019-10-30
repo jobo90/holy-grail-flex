@@ -1,8 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav';
+import APage from './components/APage';
+import BPage from './components/BPage';
+import ErrorPage from './components/ErrorPage';
 import SidebarLeft from './components/SidebarLeft';
 import MainContent from './components/MainContent';
 import SidebarRight from './components/SidebarRight';
+import SecondaryNav from './components/SecondaryNav';
+import CPage from './components/CPage';
+import DPage from './components/DPage';
 
 interface AppProps {}
 
@@ -55,15 +62,63 @@ class App extends React.Component<AppProps, AppState> {
   render() {
     return (
       <React.Fragment>
-        <Nav handleMenuToggleOpen={this.handleMenuToggleOpen} menuOpen={this.state.menuOpen} />
-        <div className="holy-grail-container">
-          <SidebarLeft
-            handleSidebarToggleOpen={this.handleSidebarToggleOpen}
-            sidebarOpen={this.state.sidebarOpen}
-          />
-          <MainContent />
-          <SidebarRight />
-        </div>
+        <Router>
+          <Nav handleMenuToggleOpen={this.handleMenuToggleOpen} menuOpen={this.state.menuOpen} />
+          <div className="holy-grail-container">
+            <Switch>
+              <Route exact path="/">
+                <SidebarLeft
+                  handleSidebarToggleOpen={this.handleSidebarToggleOpen}
+                  sidebarOpen={this.state.sidebarOpen}
+                  content={'Starting page menu'}
+                />
+                <MainContent />
+              </Route>
+              <Route path="/a">
+                <SidebarLeft
+                  handleSidebarToggleOpen={this.handleSidebarToggleOpen}
+                  sidebarOpen={this.state.sidebarOpen}
+                  content={'Content for page A'}
+                />
+                <APage />
+              </Route>
+              <Route exact path="/b">
+                <SidebarLeft
+                  handleSidebarToggleOpen={this.handleSidebarToggleOpen}
+                  sidebarOpen={this.state.sidebarOpen}
+                  content={'Content for page B'}
+                />
+                <SecondaryNav />
+                <BPage />
+                <CPage />
+              </Route>
+              <Route path="/b/c">
+                <SidebarLeft
+                  handleSidebarToggleOpen={this.handleSidebarToggleOpen}
+                  sidebarOpen={this.state.sidebarOpen}
+                  content={'Content for page B/C'}
+                />
+                <SecondaryNav />
+                <BPage />
+                <CPage />
+              </Route>
+              <Route path="/b/d">
+                <SidebarLeft
+                  handleSidebarToggleOpen={this.handleSidebarToggleOpen}
+                  sidebarOpen={this.state.sidebarOpen}
+                  content={'Content for page B/D'}
+                />
+                <SecondaryNav />
+                <BPage />
+                <DPage />
+              </Route>
+              <Route path="*">
+                <ErrorPage />
+              </Route>
+            </Switch>
+            <SidebarRight />
+          </div>
+        </Router>
       </React.Fragment>
     );
   }
