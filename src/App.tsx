@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Nav from './components/Nav';
 import APage from './components/APage';
 import BPage from './components/BPage';
@@ -8,8 +8,7 @@ import SidebarLeft from './components/SidebarLeft';
 import MainContent from './components/MainContent';
 import SidebarRight from './components/SidebarRight';
 import SecondaryNav from './components/SecondaryNav';
-import CPage from './components/CPage';
-import DPage from './components/DPage';
+import SubCategory from './components/SubCategory';
 
 interface AppProps {}
 
@@ -61,8 +60,8 @@ class App extends React.Component<AppProps, AppState> {
 
   render() {
     return (
-      <React.Fragment>
-        <Router>
+      <Router>
+        <React.Fragment>
           <Nav handleMenuToggleOpen={this.handleMenuToggleOpen} menuOpen={this.state.menuOpen} />
           <div className="holy-grail-container">
             <Switch>
@@ -82,35 +81,18 @@ class App extends React.Component<AppProps, AppState> {
                 />
                 <APage />
               </Route>
-              <Route exact path="/b">
+
+              <Redirect exact from="/b" to="/b/c" />
+
+              <Route path="/b/:subCategory">
                 <SidebarLeft
                   handleSidebarToggleOpen={this.handleSidebarToggleOpen}
                   sidebarOpen={this.state.sidebarOpen}
-                  content={'Content for page B'}
+                  content={`Content for page ${window.location.pathname}`}
                 />
                 <SecondaryNav />
                 <BPage />
-                <CPage />
-              </Route>
-              <Route path="/b/c">
-                <SidebarLeft
-                  handleSidebarToggleOpen={this.handleSidebarToggleOpen}
-                  sidebarOpen={this.state.sidebarOpen}
-                  content={'Content for page B/C'}
-                />
-                <SecondaryNav />
-                <BPage />
-                <CPage />
-              </Route>
-              <Route path="/b/d">
-                <SidebarLeft
-                  handleSidebarToggleOpen={this.handleSidebarToggleOpen}
-                  sidebarOpen={this.state.sidebarOpen}
-                  content={'Content for page B/D'}
-                />
-                <SecondaryNav />
-                <BPage />
-                <DPage />
+                <SubCategory />
               </Route>
               <Route path="*">
                 <ErrorPage />
@@ -118,8 +100,8 @@ class App extends React.Component<AppProps, AppState> {
             </Switch>
             <SidebarRight />
           </div>
-        </Router>
-      </React.Fragment>
+        </React.Fragment>
+      </Router>
     );
   }
 }

@@ -29,7 +29,7 @@ const Nav: React.FC<NavProps> = props => {
           <NavLink to="/a" activeClassName="selected">A</NavLink>
         </li>
         <li className="item">
-          <NavLink to="/b/c" activeClassName="selected">B</NavLink>
+          <NavLink to="/b" activeClassName="selected">B</NavLink>
         </li>
         <li className="toggle-container">
           <button className="toggle" type="button" onClick={handleClick}>

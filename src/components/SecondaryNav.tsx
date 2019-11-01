@@ -13,6 +13,12 @@ const SecondaryNav: React.SFC<SecondaryNavProps> = () => {
         <li className="item">
           <NavLink to="/b/d" activeClassName="selected">D</NavLink>
         </li>
+        <li className="item">
+          <NavLink to="/b/c">E</NavLink>
+        </li>
+        <li className="item">
+          <NavLink to="/b/c">F</NavLink>
+        </li>
       </ul>
     </div>
   );
